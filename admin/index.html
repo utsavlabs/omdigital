@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>omdigital Admin</title>
+    <!-- Supabase JS Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div id="login-container" class="container">
+        <div class="login-box">
+            <h1>omdigital Admin</h1>
+            <p>Sign in to manage portfolio.</p>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div id="login-error" class="error-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashboard-container" class="container" style="display: none;">
+        <header class="dashboard-header">
+            <h1>omdigital Admin</h1>
+            <nav>
+                <button id="nav-dashboard" class="nav-btn active">Portfolio</button>
+                <button id="logout-btn" class="nav-btn">Logout</button>
+            </nav>
+        </header>
+
+        <main class="dashboard-content">
+            <section class="add-section">
+                <h2>Add Portfolio Photo</h2>
+                <form id="add-photo-form">
+                    <input type="hidden" id="edit-id">
+                    
+                    <div class="form-row">
+                        <div class="form-group image-upload-group">
+                            <label for="photo-file">Image</label>
+                            <input type="file" id="photo-file" accept="image/*">
+                            <div id="image-preview-container" class="preview-container" style="display: none;">
+                                <img id="image-preview" src="" alt="Preview">
+                                <p id="current-image-name"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-fields">
+                            <div class="form-group">
+                                <label for="category">Category</label>
+                                <select id="category" required>
+                                    <option value="weddings">Weddings</option>
+                                    <option value="editorial">Editorial</option>
+                                    <option value="portraits">Portraits</option>
+                                    <option value="commercial">Commercial</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="caption">Caption / Project Name</label>
+                                <input type="text" id="caption" required placeholder="e.g. The Quiet Ceremony">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="tech-details">Technical Details (Optional)</label>
+                                <input type="text" id="tech-details" placeholder="e.g. 35mm • ƒ/2.8 • 1/125s">
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" id="submit-btn" class="btn btn-primary">Add Photo</button>
+                                <button type="button" id="cancel-edit-btn" class="btn" style="display: none;">Cancel Edit</button>
+                            </div>
+                            <div id="upload-status" class="status-message"></div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section class="list-section">
+                <h2>Portfolio Photos</h2>
+                <div id="portfolio-list" class="portfolio-grid">
+                    <!-- Loaded dynamically -->
+                    <div class="loading">Loading photos...</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Configuration -->
+    <script src="../config.js"></script>
+    <!-- Admin Logic -->
+    <script src="admin.js"></script>
+</body>
+</html>

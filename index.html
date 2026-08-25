@@ -1,0 +1,116 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>omdigital — Photography Portfolio</title>
+    <meta name="description" content="omdigital — Professional photography portfolio showcasing weddings, editorial, portraits, and commercial work.">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="canvas-container"><canvas width="1920" height="927" style="display: block; width: 1536px; height: 742px; /*savepage-canvas-image*/ background-image: url('assets/images/portfolio/image_9.png') !important; background-attachment: scroll !important; background-blend-mode: normal !important; background-clip: content-box !important; background-color: transparent !important; background-origin: content-box !important; background-position: center center !important; background-repeat: no-repeat !important; background-size: 100% 100% !important;"></canvas></div>
+
+    <nav>
+        <a href="#work" class="active">Work</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+        <div class="status-badge">
+            <span class="status-dot"></span>
+            Available Worldwide
+        </div>
+    </nav>
+
+    <header id="about">
+        <h1>omdigital<br>photography.</h1>
+        <p class="hero-subtext">A curated selection of professional photography by omdigital. Specialized in capturing raw moments, elegant weddings, and dynamic commercial imagery.</p>
+        
+        <svg class="arrow-svg" viewBox="0 0 100 100" fill="none" stroke="black" stroke-width="1.5">
+            <path d="M10,50 Q40,10 85,45"></path>
+            <path d="M75,35 L87,47 L73,55"></path>
+        </svg>
+    </header>
+
+    <section id="work" class="events-filter">
+        <div class="filter-label">Filter by category</div>
+        <div class="filter-pills">
+            <button class="filter-pill active" data-filter="all">All work</button>
+            <button class="filter-pill" data-filter="weddings">Weddings</button>
+            <button class="filter-pill" data-filter="editorial">Editorial</button>
+            <button class="filter-pill" data-filter="portraits">Portraits</button>
+            <button class="filter-pill" data-filter="commercial">Commercial</button>
+        </div>
+    </section>
+
+    <main class="gallery" id="gallery-container">
+        <!-- Portfolio items will be dynamically loaded here by script.js -->
+    </main>
+
+    <section id="reviews" class="reviews">
+        <div class="reviews-container">
+            <div class="reviews-header">
+                <span class="reviews-label">Client Testimonials</span>
+                <h2 class="reviews-title">Kind words from<br>collaborators worldwide.</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"omdigital captured our special day with an extraordinary sensitivity to emotion and light. The images exceeded every expectation we had for our wedding."</p>
+                    <div class="review-author">
+                        <img class="review-avatar" src="assets/images/portfolio/image_6.jpg">
+                        <div class="review-meta">
+                            <div class="review-name">Sarah Chen</div>
+                            <div class="review-role">Principal, Atelier Design</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Working with omdigital was seamless. Their artistic approach brought a depth to our campaign imagery that we couldn't have achieved elsewhere."</p>
+                    <div class="review-author">
+                        <img class="review-avatar" src="assets/images/portfolio/image_7.jpg">
+                        <div class="review-meta">
+                            <div class="review-name">Marcus Webb</div>
+                            <div class="review-role">Creative Director, Nomad</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"The portfolio speaks for itself, but the experience was just as remarkable. Professional, thoughtful, and genuinely gifted."</p>
+                    <div class="review-author">
+                        <img class="review-avatar" src="assets/images/portfolio/image_8.jpg">
+                        <div class="review-meta">
+                            <div class="review-name">Elena Rossi</div>
+                            <div class="review-role">Editor, Cereal Magazine</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 14px;">Available for commissions worldwide.</p>
+        <a href="https://wa.me/919448618968" class="btn-pill" target="_blank" rel="noopener noreferrer">
+            Get in touch
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 11L11 1M11 1H1M11 1V11" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </a>
+        <div style="margin-top: 60px; font-size: 11px; color: #BBB;">© 2024 OMDIGITAL STUDIO • BUILT FOR PRECISION</div>
+    </footer>
+
+    <!-- Lightbox Element -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- Supabase and Config -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    
+    <script src="script.js"></script>
+
+</body></html>
